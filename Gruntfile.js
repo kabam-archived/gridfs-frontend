@@ -13,6 +13,8 @@ var mountFolder = function (connect, dir) {
 // 'test/spec/**/*.js'
 
 module.exports = function (grunt) {
+  grunt.option('stack', true);
+
   // load all grunt tasks
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
@@ -41,18 +43,32 @@ module.exports = function (grunt) {
       compass: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
         tasks: ['compass:server']
-      },
+      }//,
+//      livereload: {
+//        options: {
+//          livereload: LIVERELOAD_PORT
+//        },
+//        files: [
+//          '<%= yeoman.app %>/{,*/}*.html',
+//          '<%= yeoman.directive %>/{,*/}*.js',
+//          '{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
+//          '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
+//          '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+//        ]
+//      }
+    },
+    express: {
       livereload: {
         options: {
-          livereload: LIVERELOAD_PORT
-        },
-        files: [
-          '<%= yeoman.app %>/{,*/}*.html',
-          '<%= yeoman.directive %>/{,*/}*.js',
-          '{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
-          '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
-          '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
-        ]
+          port: 9000,
+          bases: [
+            (require('path').resolve('.tmp')),
+            (require('path').resolve(yeomanConfig.app)),
+            (require('path').resolve(yeomanConfig.directive))
+          ],
+          server: './server',
+          livereload: true
+        }
       }
     },
     connect: {
@@ -328,7 +344,7 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:server',
       'concurrent:server',
-      'connect:livereload',
+      'express:livereload',
       'open',
       'watch'
     ]);

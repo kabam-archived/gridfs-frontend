@@ -1,0 +1,9 @@
+{
+  "development":{
+    "hostUrl": "http://localhost/",
+    "secret":"hammer on the keyboard",
+    "mongoUrl":"mongodb://localhost/mwc_gridfs_test",
+    "redis":{"host":"localhost","port":6379},
+    "sessionStorage": "redis"
+  }
+}

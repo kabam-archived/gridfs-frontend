@@ -27,7 +27,10 @@
     "matchdep": "~0.1.2",
     "connect-livereload": "~0.2.0",
     "grunt-google-cdn": "~0.2.0",
-    "grunt-ngmin": "~0.0.2"
+    "grunt-ngmin": "~0.0.2",
+    "mwc_plugin_gridfs": "git+https://github.com/mywebclass/mwc_plugin_gridfs.git",
+    "mwc_kernel": "git+https://github.com/mywebclass/mwc_kernel.git",
+    "grunt-express": "~1.0.0-beta2"
   },
   "engines": {
     "node": ">=0.10.0"
