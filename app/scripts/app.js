@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('gridfsFrontendApp', ['dndUpload'])
+angular.module('gridfsFrontendApp', ['dropzoneUpload'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
