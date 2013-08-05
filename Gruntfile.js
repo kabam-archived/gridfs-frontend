@@ -60,6 +60,7 @@ module.exports = function (grunt) {
     express: {
       livereload: {
         options: {
+          hostname: '0.0.0.0',
           port: 9000,
           bases: [
             (require('path').resolve('.tmp')),
