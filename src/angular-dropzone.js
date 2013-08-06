@@ -10,7 +10,7 @@ function readableFileSize(fileSizeInBytes){
   return Math.max(fileSizeInBytes, 0.1).toFixed(1) + byteUnits[i];
 }
 
-angular.module('dropzoneUpload', []).directive('dropzone', ['$browser', function($browser){
+angular.module('angularDropzone', []).directive('dropzone', ['$browser', function($browser){
   return {
     restrict: 'A',
     scope: true,
