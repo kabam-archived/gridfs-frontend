@@ -1,6 +1,10 @@
 {
   "name": "gridfsFrontend",
   "version": "0.0.0",
+  "ignore": [
+    "/*",
+    "!src/*"
+  ],
   "dependencies": {
     "angular": "~1.0.7",
     "json3": "~3.2.4",
