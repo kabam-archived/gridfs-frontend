@@ -33,7 +33,7 @@ angular.module('dropzoneUpload', []).directive('dropzone', ['$browser', function
       new Dropzone(elem[0], {
         url: attrs.url,
         maxFileSize: attrs.maxsize,
-        method: 'PUT',
+        method: attrs.method || 'PUT',
         headers: {'X-XSRF-TOKEN': $browser.cookies()['XSRF-TOKEN']},
         init: function(){
           this.on("addedfile", function(file){
@@ -45,7 +45,6 @@ angular.module('dropzoneUpload', []).directive('dropzone', ['$browser', function
           });
           this.on('success', function(file, response){
             scope.$apply();
-//            console.log(file, response);
           })
         }
       });
