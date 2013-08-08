@@ -9,8 +9,10 @@ files = [
   JASMINE_ADAPTER,
   'app/bower_components/angular/angular.js',
   'app/bower_components/angular-mocks/angular-mocks.js',
+  'app/bower_components/dropzone/downloads/dropzone.js',
   'app/scripts/*.js',
   'app/scripts/**/*.js',
+  'src/*.js',
   'test/mock/**/*.js',
   'test/spec/**/*.js'
 ];
